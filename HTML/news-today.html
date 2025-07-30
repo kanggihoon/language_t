@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>오늘의 뉴스</title>
+</head>
+<body>
+
+  <!-- 헤더: 페이지 주제 -->
+  <header>
+    <h1>오늘의 뉴스</h1>
+  </header>
+
+  <!-- 내비게이션: 카테고리 링크 -->
+  <nav>
+    <ul>
+      <li><a href="#social">사회</a></li>
+      <li><a href="#economy">경제</a></li>
+      <li><a href="#sports">스포츠</a></li>
+    </ul>
+  </nav>
+
+  <!-- 메인 콘텐츠 -->
+  <main>
+
+    <!-- 사회 섹션 -->
+    <section id="social">
+      <h2>사회</h2>
+      <article>
+        <h3>독감 유행</h3>
+        <figure>
+          <!-- media 폴더에 influenza.jpg 파일을 넣어주세요 -->
+          <img src="media/influenza.jpg" alt="인플루엔자 바이러스 전자현미경 사진" width="640">
+          <figcaption>🔬 최근 독감(인플루엔자) 유행 현황</figcaption>
+        </figure>
+        <p>전국적으로 독감 환자가 급증하고 있습니다. 보건당국은…</p>
+      </article>
+    </section>
+
+    <!-- 경제 섹션 -->
+    <section id="economy">
+      <h2>경제</h2>
+      <article>
+        <h3>증권 시장 상승세</h3>
+        <figure>
+          <!-- media 폴더에 stock.jpg 파일을 넣어주세요 -->
+          <img src="media/stock.jpg" alt="증권 시장 그래프" width="640">
+          <figcaption>📈 오늘 증권 시장 주요 지수</figcaption>
+        </figure>
+        <p>코스피·코스닥 지수가 사상 최고치를 기록했습니다. 전문가들은…</p>
+      </article>
+    </section>
+
+    <!-- 스포츠 섹션 -->
+    <section id="sports">
+      <h2>스포츠</h2>
+      <article>
+        <h3>축구 경기 하이라이트</h3>
+        <figure>
+          <!-- 미리보기 이미지 (선택) -->
+          <img src="media/highlight.jpg" alt="축구 경기 하이라이트 스틸컷" width="640">
+          <figcaption>⚽ A팀 vs B팀 경기 하이라이트</figcaption>
+        </figure>
+        <video controls width="640" poster="media/highlight.jpg">
+          <!-- media 폴더에 highlight.mp4 파일을 넣어주세요 -->
+          <source src="media/highlight_vidio.mp4" type="video/mp4">
+          브라우저가 video 태그를 지원하지 않습니다.
+        </video>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- 푸터: 저작권 표시 -->
+  <footer>
+    © 2025 SKALA 뉴스.
+  </footer>
+
+</body>
+</html>

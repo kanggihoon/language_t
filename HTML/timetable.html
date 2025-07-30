@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>일주일 강의 시간표</title>
+  <style>
+    body {
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    .table-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fcf4d9;
+      border: 1px solid #333;
+      padding: 1rem 1.5rem 2rem;
+    }
+    h1 {
+      margin: 0 0 1rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #666;
+      padding: 0.5rem;
+      text-align: center;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+    th {
+      background: #eee;
+    }
+    /* 강조 스타일 */
+    .highlight {
+      background: #d7e8ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-wrap">
+    <h1>📅 일주일 강의 시간표</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 09:00 - 10:00 -->
+        <tr>
+          <th>09:00‒10:00</th>
+          <td class="highlight" rowspan="2">자료구조<br>(2h)</td>
+          <td>영어회화</td>
+          <td>컴퓨터개론</td>
+          <td>경제학개론</td>
+          <td></td>
+        </tr>
+        <!-- 10:00 - 11:00 -->
+        <tr>
+          <th>10:00‒11:00</th>
+          <!-- Mon continues rowspan -->
+          <td>물리학</td>
+          <td>컴퓨터개론</td>
+          <td></td>
+          <td>미적분학</td>
+        </tr>
+        <!-- 11:00 - 12:00 -->
+        <tr>
+          <th>11:00‒12:00</th>
+          <td>화학실험</td>
+          <td>프로그래밍</td>
+          <td>통계학</td>
+          <td>경제학개론</td>
+          <td>영어회화</td>
+        </tr>
+        <!-- Lunch 12:00 - 13:00 (colspan) -->
+        <tr>
+          <th>12:00‒13:00</th>
+          <td colspan="5" style="background:#ffe8a1;font-weight:600;">🍱 점심시간 (모든 요일)</td>
+        </tr>
+        <!-- 13:00 - 14:00 -->
+        <tr>
+          <th>13:00‒14:00</th>
+          <td>선형대수</td>
+          <td class="highlight" rowspan="2">데이터베이스<br>(2h)</td>
+          <td></td>
+          <td>문학사</td>
+          <td>체육</td>
+        </tr>
+        <!-- 14:00 - 15:00 -->
+        <tr>
+          <th>14:00‒15:00</th>
+          <td>선형대수</td>
+          <!-- Tue continues rowspan -->
+          <td></td>
+          <td>문학사</td>
+          <td>체육</td>
+        </tr>
+        <!-- 15:00 - 16:00 -->
+        <tr>
+          <th>15:00‒16:00</th>
+          <td></td>
+          <td>창업세미나</td>
+          <td>데이터분석</td>
+          <td></td>
+          <td>프로젝트랩</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <!-- 텍스트 입력 -->
+            <label for="username">사용자 이름:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <!-- 이메일 입력 -->
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <!-- 비밀번호 입력 -->
+            <label for="password">비밀번호:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <!-- 체크박스 -->
+            <label for="newsletter">뉴스레터 구독:</label>
+            <input type="checkbox" id="newsletter" name="newsletter"><br>
+        </fieldset>
+ 
+
+        <!-- 라디오 버튼 -->
+        <label for="gender">성별:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">여성</label><br>
+
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

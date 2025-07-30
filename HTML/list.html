@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>나를 표현하는 목록들</title>
+  <style>
+    body {
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    .note-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fcf4d9; /* 연한 베이지 */
+      border: 1px solid #333;
+      padding: 1.2rem 2rem;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+    }
+    ol {
+      list-style-type: decimal;
+      margin-left: 1.2rem;
+    }
+    dt {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    dd {
+      margin: 0 0 0.5rem 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="note-box">
+    <!-- 1. 내가 좋아하는 음식 (순서 없는 리스트) -->
+    <h1>내가 좋아하는 음식</h1>
+    <ul>
+      <li>스시</li>
+      <li>쌀국수</li>
+      <li>떡볶이</li>
+      <li>젤라토</li>
+    </ul>
+
+    <!-- 2. 올 해 할 일 (순서 있는 리스트) -->
+    <h1>올 해 할 일</h1>
+    <ol>
+      <li>TypeScript 배우기</li>
+      <li>하프마라톤 완주</li>
+      <li>책 12권 읽기</li>
+      <li>제주도 여행</li>
+    </ol>
+
+    <!-- 3. 나를 설명하는 단어들 (정의형 목록) -->
+    <dl>
+      <dt>Curious</dt>
+      <dd>새로운 지식을 향한 끝없는 호기심이 있습니다.</dd>
+      <dt>Resilient</dt>
+      <dd>어려움이 있어도 빠르게 회복하고 성장합니다.</dd>
+      <dt>Creative</dt>
+      <dd>창의적인 아이디어로 문제를 해결하는 것을 즐깁니다.</dd>
+      <dt>Analytical</dt>
+      <dd>데이터와 패턴 속에서 인사이트를 찾아냅니다.</dd>
+    </dl>
+  </div>
+</body>
+</html>
