@@ -1,0 +1,68 @@
+/* 1) CSS 변수 정의 (기본: 화이트 테마) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --primary-color: #3498db;
+  --surface-color: #f9f9f9;
+}
+
+/* 2) 다크 테마 변수 재정의 */
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eeeeee;
+  --primary-color: #00bcd4;
+  --surface-color: #1e1e1e;
+}
+
+/* 3) 본문 전체 스타일 */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color .3s ease,
+              color .3s ease;
+}
+
+/* 4) 테마 스위처 스타일 */
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.theme-switcher input {
+  /* 라디오 버튼 숨기고 label로 대체 */
+  position: absolute;
+  opacity: 0;
+}
+.theme-switcher label {
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  transition: background-color .3s ease,
+              color .3s ease,
+              border-color .3s ease;
+}
+/* 선택된 라디오의 label 강조 */
+#light:checked + label[for="light"],
+#dark:checked + label[for="dark"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+/* 5) 제목 & 본문 텍스트 */
+h1 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: color .3s ease;
+}
+p {
+  margin: 0;
+  line-height: 1.5;
+}

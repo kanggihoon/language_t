@@ -1,0 +1,63 @@
+/* ----------------------------------------
+   공통 리셋 & body 스타일
+---------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+/* ----------------------------------------
+   상단 박스 스타일
+---------------------------------------- */
+.box {
+  /* 크기 및 중앙 정렬 */
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  margin: 0 auto 20px;
+  
+  /* 배경색, 글자색, 둥근 모서리 */
+  background-color: #4CAF50; /* green */
+  color: #fff;
+  border-radius: 12px;
+  
+  /* transition: 배경색과 transform(회전) 변환 시 부드럽게 */
+  transition-property: background-color, transform;
+  transition-duration: 0.3s, 0.5s;
+  transition-timing-function: ease, ease;
+}
+
+/* hover 가상 선택자: 배경색만 노란색으로 변경 */
+.box:hover {
+  background-color: #FFC107; /* yellow */
+}
+
+/* .rotated 클래스가 붙으면 45도 회전 */
+.rotated {
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------
+   버튼 스타일
+---------------------------------------- */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #008CFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  /* 버튼 호버 시 배경 부드럽게 전환 */
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #005F9E;
+}

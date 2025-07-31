@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 가상 선택자 실습</title>
+  <link rel="stylesheet" href="./css/hover_style.css">
+</head>
+<body>
+
+  <h1>CSS 가상 선택자 실습</h1>
+
+  <!-- 1. :hover -->
+  <section>
+    <h2>:hover</h2>
+    <button class="btn">마우스를 올려보세요</button>
+  </section>
+
+  <!-- 2. :first-child, :last-child, :nth-child(n) -->
+  <section>
+    <h2>:first-child, :last-child, :nth-child(2)</h2>
+    <ul class="list">
+      <li>첫 번째 아이템</li>
+      <li>두 번째 아이템</li>
+      <li>세 번째 아이템</li>
+      <li>네 번째 아이템</li>
+    </ul>
+  </section>
+
+  <!-- 3. :not() -->
+  <section>
+    <h2>:not(.special)</h2>
+    <p class="special">이 문장은 <code>.special</code> 클래스가 있어서 제외됩니다.</p>
+    <p>이 문장은 일반 문장입니다.</p>
+    <p>이 문장도 일반 문장입니다.</p>
+  </section>
+
+  <!-- 4. ::before, ::after -->
+  <section>
+    <h2>::before, ::after</h2>
+    <p class="quote">이곳은 인용문이 들어가는 영역입니다.</p>
+  </section>
+
+</body>
+</html>

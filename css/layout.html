@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid + Flexbox 검색 UI 레이아웃</title>
+  <style>
+    /* ----------------------------------------
+       전역 스타일
+    ---------------------------------------- */
+    /* 화면 여백과 배경 설정 */
+    body {
+      margin: 0;                 /* 브라우저 기본 여백 제거 */
+      padding: 20px;             /* 전체 내부 여백 */
+      font-family: sans-serif;   /* 기본 글꼴 */
+      background: #f4f4f4;       /* 연한 회색 배경 */
+    }
+
+    /* ----------------------------------------
+       그리드 컨테이너: 검색바 + 콘텐츠 영역 배치
+    ---------------------------------------- */
+    .wrapper {
+      display: grid;                       /* 그리드 컨텍스트 활성화 */
+      grid-template-rows: auto 1fr;        /* 첫 행은 내용 높이만큼(auto), 둘째 행은 남은 공간 차지(1fr) */
+      row-gap: 20px;                       /* 행 간격 20px */
+      max-width: 800px;                    /* 컨텐츠 최대 너비 */
+      margin: 0 auto;                      /* 화면 가로 중앙 정렬 */
+    }
+
+    /* ----------------------------------------
+       검색 바: Flexbox 로 수평 배치
+    ---------------------------------------- */
+    .search-bar {
+      display: flex;        /* 플렉스 컨테이너 */
+      align-items: center;  /* 세로 중앙 정렬 */
+      gap: 10px;            /* 아이템 간격 */
+    }
+
+    /* 검색어 입력창 스타일 */
+    .search-bar input[type="text"] {
+      flex: 1;                     /* 남은 공간 모두 차지 */
+      padding: 8px;                /* 내부 여백 */
+      font-size: 1rem;             /* 글자 크기 */
+      border: 1px solid #ccc;      /* 연한 회색 경계선 */
+      border-radius: 4px;          /* 모서리 둥글게 */
+    }
+
+    /* 검색 버튼 스타일 */
+    .search-bar button {
+      padding: 8px 16px;           /* 상하 8px, 좌우 16px 여백 */
+      font-size: 1rem;             /* 글자 크기 */
+      border: 1px solid #007bff;   /* 파란색 경계선 */
+      background: #007bff;         /* 파란색 배경 */
+      color: #fff;                 /* 흰색 글자 */
+      border-radius: 4px;          /* 모서리 둥글게 */
+      cursor: pointer;             /* 마우스 포인터 변경 */
+      transition: background .2s;  /* 호버 시 부드러운 배경 전환 */
+    }
+    .search-bar button:hover {
+      background: #0056b3; /* 살짝 진한 파랑 */
+    }
+
+    /* ----------------------------------------
+       콘텐츠 영역 박스
+    ---------------------------------------- */
+    .content {
+      background: #fff;            /* 흰색 배경 */
+      border: 1px solid #ccc;      /* 연한 회색 경계선 */
+      padding: 20px;               /* 내부 여백 */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 가벼운 그림자 */
+    }
+
+    /* 제목(h2) 아래에 굵은 밑줄 스타일 */
+    .content h2 {
+      margin: 0 0 10px;         /* 아래쪽 여백 10px */
+      font-size: 1.2rem;        /* 글자 크기 */
+      color: #333;              /* 진한 회색 글자 */
+      border-bottom: 2px solid #333; /* 밑줄 대신 border 사용 */
+      padding-bottom: 8px;      /* 밑줄과 텍스트 간격 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- 검색 영역: Flexbox 로 input 과 버튼을 나란히 배치 -->
+    <div class="search-bar">
+      <!-- 입력란: flex:1 로 늘어나고, placeholder 로 안내 문구 표시 -->
+      <input type="text" placeholder="키워드 입력">
+      <!-- 버튼: 클릭 가능한 검색 트리거 -->
+      <button>검색</button>
+    </div>
+
+    <!-- 콘텐츠 영역: Grid 의 두 번째 행을 채움 -->
+    <div class="content">
+      <!-- 목록형 데이터 영역 제목 -->
+      <h2>목록형 데이터 영역</h2>
+      <!-- 실제 데이터 리스트나 테이블은 이곳에 추가합니다 -->
+    </div>
+  </div>
+
+</body>
+</html>

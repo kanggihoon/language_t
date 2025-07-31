@@ -1,0 +1,79 @@
+/* ---- 공통 스타일 ---- */
+body {
+  /* 충분한 스크롤 확보 */
+  height: 200vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: #f5f5f5;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* 박스 기본 */
+.box {
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ---- static/relative/absolute 비교 컨테이너 ---- */
+.container {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  border: 2px dashed #aaa;
+  background: #fff;
+  margin-bottom: 60px;
+}
+
+/* static: 기본 flow */
+.static {
+  background: #777;
+  position: static;
+  margin: 10px;
+}
+
+/* relative: 원래 자리에서 offset */
+.relative {
+  background: #0044cc;
+  position: relative;
+  top: 0;
+  left: 180px;
+}
+
+/* absolute: 컨테이너 기준 절대 위치 */
+.absolute {
+  background: #008800;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
+
+/* ---- fixed / sticky ---- */
+.fixed {
+  background: #cc0000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.sticky {
+  background: #ff9900;
+  position: sticky;
+  top: 0;
+  margin-top: 20px;
+}
+
+p {
+  margin-top: 600px;
+  color: #333;
+}

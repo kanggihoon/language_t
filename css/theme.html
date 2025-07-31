@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- 반응형 뷰포트 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테마 전환 예제</title>
+  <link rel="stylesheet" href="./css/theme.css">
+</head>
+<body>
+  <!-- 테마 선택 라디오 -->
+  <div class="theme-switcher">
+    <input type="radio" name="theme" id="light" checked>
+    <label for="light">화이트 테마</label>
+
+    <input type="radio" name="theme" id="dark">
+    <label for="dark">다크 테마</label>
+  </div>
+
+  <!-- 본문 -->
+  <h1>테마 전환 예제</h1>
+  <p>CSS 사용자 정의 변수를 활용하여 테마를 전환할 수 있습니다.</p>
+
+  <!-- 테마 변경 스크립트 -->
+  <script>
+    const root = document.documentElement;
+    const radios = document.querySelectorAll('.theme-switcher input');
+
+    function updateTheme() {
+      // data-theme 속성에 현재 선택된 id 값을 넣으면 CSS custom-properties가 바뀝니다
+      const theme = document.querySelector('.theme-switcher input:checked').id;
+      root.setAttribute('data-theme', theme);
+    }
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', updateTheme);
+    });
+
+    // 초기 테마 설정
+    updateTheme();
+  </script>
+</body>
+</html>

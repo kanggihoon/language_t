@@ -1,0 +1,78 @@
+/* 공통 스타일 */
+body {
+  padding: 20px;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+}
+h1 { margin-bottom: 1rem; }
+section { margin-bottom: 2rem; }
+h2 { font-size: 1.2rem; color: #333; margin-bottom: .5rem; }
+
+/* 1. :hover */
+.btn {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background .3s;
+}
+.btn:hover {
+  background: #2ecc71;
+}
+
+/* 2. :first-child, :last-child, :nth-child(n) */
+.list {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+}
+.list li {
+  background: #bdc3c7;
+  margin: 5px 0;
+  padding: 10px;
+  color: #2c3e50;
+}
+.list li:first-child {
+  background: #27ae60;
+  color: #fff;
+}
+.list li:last-child {
+  background: #c0392b;
+  color: #fff;
+}
+.list li:nth-child(2) {
+  background: #2980b9;
+  color: #fff;
+}
+
+/* 3. :not() */
+p:not(.special) {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* 4. ::before, ::after */
+.quote {
+  position: relative;
+  padding: 20px;
+  background: #ecf0f1;
+  max-width: 400px;
+}
+.quote::before {
+  content: "“";
+  font-size: 2rem;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: #7f8c8d;
+}
+.quote::after {
+  content: "”";
+  font-size: 2rem;
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  color: #7f8c8d;
+}

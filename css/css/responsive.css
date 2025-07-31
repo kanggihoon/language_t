@@ -1,0 +1,70 @@
+/* ───────────────────────────────────────────
+   1. 기본 리셋 및 본문 스타일
+─────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+}
+
+/* ───────────────────────────────────────────
+   2. Grid 컨테이너 (모바일 우선)
+─────────────────────────────────────────── */
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "main"
+    "footer";
+  grid-gap: 10px;        /* 영역 간격 */
+  max-width: 1024px;     /* 전체 너비 제한 */
+  margin: 0 auto;        /* 가운데 정렬 */
+  padding: 10px;         /* 내부 여백 */
+}
+
+/* ───────────────────────────────────────────
+   3. Grid 영역별 스타일
+─────────────────────────────────────────── */
+header {
+  grid-area: header;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+main {
+  grid-area: main;
+  background: #fafafa;
+  padding: 20px;
+}
+aside {
+  grid-area: sidebar;
+  background: #f0f0f0;
+  padding: 20px;
+}
+footer {
+  grid-area: footer;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ───────────────────────────────────────────
+   4. 데스크탑 ≥769px 레이아웃
+─────────────────────────────────────────── */
+@media (min-width: 769px) {
+  .wrapper {
+    grid-template-columns: 3fr 1fr;  /* 2열: 메인 3, 사이드 1 비율 */
+    grid-template-areas:
+      "header  header"
+      "main    sidebar"
+      "footer  footer";
+  }
+}

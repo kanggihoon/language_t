@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform and Transition Example</title>
+  <!-- 분리된 CSS 파일 로드 -->
+  <link rel="stylesheet" href="./css/trans.css">
+</head>
+<body>
+  <h1>Transform and Transition Example</h1>
+
+  <!-- 
+    상단 박스: hover 시 배경색이 변하고, 
+    하단 버튼 클릭 시 회전(transform)될 대상
+  -->
+  <div class="box" id="transformBox">Hover me!</div>
+
+  <!-- 클릭 시 위 박스를 45도 회전시키는 버튼 -->
+  <button id="rotateBtn">Click Me!</button>
+
+  <script>
+    // 버튼 클릭 시 #transformBox에 .rotated 클래스 토글
+    const box = document.getElementById('transformBox');
+    const btn = document.getElementById('rotateBtn');
+    btn.addEventListener('click', () => {
+      box.classList.toggle('rotated');
+    });
+  </script>
+</body>
+</html>

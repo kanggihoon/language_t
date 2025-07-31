@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>블록 vs 인라인 스타일 변형</title>
+  <style>
+    /* ── 공통 컨테이너 스타일 ── */
+    .container {
+      border: 2px dashed #aaa;
+      padding: 10px;
+      margin-bottom: 30px;
+      background: #fff;
+      max-width: 600px;
+    }
+
+    /* ── 공통 박스 스타일 ── */
+    .box {
+      padding: 10px;
+      border: 1px solid #3498db;
+      color: #2c3e50;
+      font-family: sans-serif;
+    }
+
+    /* ── 블록 스타일 ── */
+    .block {
+      display: block;      /* 기본값이기도 함 */
+      width: 100%;         /* 컨테이너 전체 너비 차지 */
+      margin-bottom: 10px; /* 박스끼리 아래 여백 */
+      background: #add8e6; /* 연한 하늘색 */
+    }
+
+    /* ── 인라인 스타일 ── */
+    .inline {
+      display: inline;     /* 인라인 요소로 변경 */
+      /* width/height 설정 무시됨(내용 크기만큼) */
+      margin-right: 10px;  /* 옆으로 나란히 배치되고, 오른쪽 여백 */
+      background: #98fb98; /* 연한 연두색 */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>블록 요소 기본 스타일</h1>
+  <div class="container">
+    <div class="box block">블록 스타일 div 1</div>
+    <div class="box block">블록 스타일 div 2</div>
+  </div>
+
+  <h1>인라인 스타일로 변경한 div</h1>
+  <div class="container">
+    <div class="box inline">인라인 스타일 div 1</div>
+    <div class="box inline">인라인 스타일 div 2</div>
+  </div>
+
+</body>
+</html>

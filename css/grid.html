@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>2행 3열 Grid 레이아웃</title>
+  <style>
+    /* 페이지 전체 스타일 */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Grid 컨테이너 */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3열 */
+      grid-auto-rows: 120px;                  /* 각 행 높이 120px */
+      gap: 20px;                              /* 격자 사이 간격 */
+      max-width: 760px;
+      margin: 0 auto;                        /* 가로 중앙 정렬 */
+      background: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Grid 아이템 */
+    .grid-item {
+      background: #87ceeb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>2행 3열 Grid 레이아웃 예제</h1>
+
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+
+</body>
+</html>
