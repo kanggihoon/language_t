@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>정규 표현식으로 한글 판별</title>
+  <style>
+    body { 
+      font-family: sans-serif; 
+      padding: 20px; 
+      line-height: 1.6;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .true  { color: green;  }
+    .false { color: red;    }
+  </style>
+</head>
+<body>
+
+  <h1>정규 표현식으로 한글 문자열 판별</h1>
+  <pre id="output"></pre>
+
+  <script>
+    /**
+     * name 문자열이 모두 한글(가-힣)로만 이루어져 있으면 true 반환
+     * ^, $: 전체 문자열 검사
+     * [가-힣]+: 한글 완성형 음절 한 글자 이상
+     */
+    function isKoreanName(name) {
+      const regex = /^[가-힣]+$/;
+      return regex.test(name);
+    }
+
+    // 테스트 케이스
+    const tests = [
+      { input: "홍길동", expect: true },
+      { input: "Tom",     expect: false },
+      { input: "김철수3",  expect: false }, // 숫자 포함
+      { input: "이영희",  expect: true }
+    ];
+
+    // 콘솔 출력
+    tests.forEach(t => {
+      console.log(`isKoreanName("${t.input}") →`, isKoreanName(t.input));
+    });
+
+    // 화면에 결과 표시
+    const outEl = document.getElementById("output");
+    tests.forEach(t => {
+      const result = isKoreanName(t.input);
+      outEl.innerHTML += 
+        `isKoreanName("${t.input}") → ` +
+        `<span class="${result}">${result}</span>\n`;
+    });
+  </script>
+
+</body>
+</html>

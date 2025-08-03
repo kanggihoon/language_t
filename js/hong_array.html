@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>홍길동의 식량 분배 (배열 함수 버전)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    table {
+      margin-top: 1rem;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>홍길동의 식량 분배 결과</h1>
+  <pre id="text-output"></pre>
+  <div id="table-output"></div>
+
+  <script>
+    const foods = [
+      "쌀", "보리", "콩", "감자", "양파",
+      "마늘", "배추", "무", "고구마", "호박"
+    ];
+    const poors = ["철수", "영희", "민수"];
+
+    // 1) 초기 결과 배열: map 으로 name별 {name, items:[]} 객체 생성
+    const initialResults = poors.map(name => ({ name, items: [] }));
+
+    // 2) reduce 로 foods 순회하며 round-robin 분배
+    const results = foods.reduce((acc, food, idx) => {
+      const target = acc[idx % acc.length];
+      // 불변성을 지키려면 items 새 배열로 교체 가능하지만, 여기선 push 로 간단히
+      target.items.push(food);
+      return acc;
+    }, initialResults);
+
+    // 3) 콘솔에 테이블 출력
+    console.table(results);
+
+    // 4) 화면에 텍스트로 출력
+    const textOut = document.getElementById("text-output");
+    results.forEach(({ name, items }) => {
+      textOut.textContent += `${name}: ${items.join(", ")}\n`;
+    });
+
+    // 5) 화면에 HTML 테이블로 출력
+    const tableOut = document.getElementById("table-output");
+    const table = document.createElement("table");
+    // 헤더
+    const headerRow = document.createElement("tr");
+    ["이름", "할당 식량"].forEach(txt => {
+      const th = document.createElement("th");
+      th.textContent = txt;
+      headerRow.append(th);
+    });
+    table.append(headerRow);
+    // 데이터 행
+    results.forEach(({ name, items }) => {
+      const tr = document.createElement("tr");
+      const tdName = document.createElement("td");
+      tdName.textContent = name;
+      const tdItems = document.createElement("td");
+      tdItems.textContent = items.join(", ");
+      tr.append(tdName, tdItems);
+      table.append(tr);
+    });
+    tableOut.append(table);
+  </script>
+</body>
+</html>

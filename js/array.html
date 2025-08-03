@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // const array = [
+    // [1,2,3,4],
+    // [5,6,7,8],
+    // [9,10,11,12]
+    // ];
+
+    // console.table(array)
+
+
+    // const arr = [1, 2, 3, 4]; 
+    // console.log(arr); 
+    // arr.length = 5; // 길이를 변경하여 빈 공간 확보
+    // console.log(arr)
+    // arr[4] = 10;
+    // console.log(arr); 
+    // arr.push(11);  // push를 통해 엘리먼트 추가
+    // console.log(arr);
+
+
+    const original = [1, [2, 3], 4];
+    const shallowCopyArray = [...original];
+    // 얕은 복사 확인: 최상위 요소는 독립적 
+    shallowCopyArray[0] = 10;
+    console.log(shallowCopyArray[0]); // 1 (독립적)
+    // 중첩 배열은 참조를 공유
+    // shallowCopyArray[1][0] = 20;
+    // console.log(originalArray[1][0]); // 20 ( 원본도 영향 받음)
+
+    </script>
+
+</body>
+</html>

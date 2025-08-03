@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>홍길동의 변신 (transform 함수)</title>
+</head>
+<body>
+  <h1>홍길동의 변신</h1>
+  <p>페이지가 열리면 변신할 형태를 입력해주세요.</p>
+
+  <script>
+    // prompt 로 사용자에게 변신 형태를 입력받는다.
+    const form = prompt("홍길동이 어떤 형태로 변신할까요?\n예) 용, 호랑이, 나비");
+
+    // 입력값이 없거나 취소했을 때
+    if (!form) {
+      alert("연기처럼 사라졌습니다.");
+    } else {
+      // 입력한 형태로 변신 메시지를 띄운다
+      alert(`홍길동 변신 – ${form}!`);
+    //   window.document(`<h1>홍길동 변신 – ${form}!</h1>`)
+    }
+  </script>
+</body>
+</html>
