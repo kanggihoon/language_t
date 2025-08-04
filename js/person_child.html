@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name,age,skills) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.skills = skills;
+        // }
+        // const person = new Person("홍길동",25,["검술","변신"])
+        // console.log(person.name, person.skills)
+
+        person = {
+            name:"홍길동",
+            age : 25,
+            skills : ['검술','변신','월담'],
+
+            greet: function(time) {
+                console.log('greet')
+                return `${time} 안녕하세요? ${this.name}` 
+            }
+        }
+
+        //그림자와 분신 기술 없애기
+        const realHong = {
+            name: "홍길동",
+            age: 25,
+            job: "의적",
+            skills : ['검술','전략','분신'],
+            shadow: {
+                color: "black"
+            }
+        }
+
+        // const fakeHong = {...realHong} //얕은 복사
+        const temp = JSON.stringify(realHong) //깊은 복사1
+        const fakeHong = JSON.parse(temp)
+        
+        const idx = fakeHong.skills.indexOf('분신');
+        if (idx !== -1) fakeHong.skills.splice(idx,1)
+        delete fakeHong.shadow.color
+    
+        // console.log(fakeHong)
+
+        document.write(JSON.stringify(fakeHong))
+        document.write('<br>')
+        document.write(JSON.stringify(realHong))
+
+
+
+
+
+        // const person3 = new Person('강기훈',25)
+        // consloe.log(person3.name, person3.age)
+
+        // const json = JSON.stringify(person)
+        // const obj = JSON.parse(json);
+        // document.write(json, obj)
+        // document.write(json)
+        // console.log(obj)
+
+
+        // const child = Object.create(person)
+        // console.log('person',person.name, person.age, person.skills)
+        // console.log('child 변경전',child.name, child.age, child.skills)
+        // child.name = "임꺽정"
+        // child.age = 36
+        // child.skills = ['도적질']
+        // console.log('변경후',child.name, child.age, child.skills)
+        // console.log('person',person.name, person.age, person.skills)
+
+
+        // console.log(person.hasOwnProperty('greet'))
+        // console.log(child.hasOwnProperty('greet'))
+        // console.log(person.greet("아침에"))
+
+        // person2 = new Object()
+        // person2 = {}
+        // person2.name = "홍길동"
+        // person2.age = 25
+
+        // person2.greet = function(time) {
+        //         console.log('greet')
+        //         return `${time} 안녕하세요? ${this.name}` 
+        //     }
+        // console.log(person2.name, person2.age, person2.greet("저녁에"))
+    </script>
+</body>
+</html>

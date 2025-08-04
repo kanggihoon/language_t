@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>홍길동 변신 (이벤트 핸들러 방식)</title>
+  <style>
+    fieldset {
+      width: 220px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #output {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>홍길동 변신술</h1>
+  <fieldset>
+    <legend>변신할 대상을 선택하세요:</legend>
+    <label><input type="radio" name="target" value="스님" /> 스님</label><br />
+    <label><input type="radio" name="target" value="곰" /> 곰</label><br />
+    <label><input type="radio" name="target" value="호랑이" /> 호랑이</label><br />
+    <!-- addEventListener 예시 -->
+    <button id="transformBtn">변신</button>
+    <!-- onclick 프로퍼티 예시 -->
+    <button id="resetBtn">초기화</button>
+  </fieldset>
+
+  <p id="output">변신 결과: —</p>
+
+  <script>
+    // 변신 버튼: 클릭/더블클릭 모두 addEventListener로
+    const transformBtn = document.getElementById("transformBtn");
+    transformBtn.addEventListener("click", () => {
+      const sel = document.querySelector('input[name="target"]:checked');
+      const msg = sel ? sel.value : "아무것도 선택되지 않았습니다";
+      showEvent(`변신 결과: ${msg}`);
+    });
+    transformBtn.addEventListener("dblclick", () => {
+      showEvent("두 번 연속 변신 시도!");
+    });
+
+    // 초기화 버튼: onclick 프로퍼티 방식
+    const resetBtn = document.getElementById("resetBtn");
+    resetBtn.onclick = function () {
+      document.querySelectorAll('input[name="target"]').forEach(r => r.checked = false);
+      showEvent("선택이 초기화되었습니다");
+    };
+
+    // 공통으로 메시지를 출력하는 함수
+    function showEvent(message) {
+      console.log(message);
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = message;
+    }
+  </script>
+</body>
+</html>

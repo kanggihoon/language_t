@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age,skills) {
+            this.name = name;
+            this.age = age;
+            this.skills = skills;
+        }
+        const person = new Person("홍길동",25,["검술","변신"])
+        console.log(person.name, person.skills)
+
+        person = {
+            name:"홍길동",
+            age : 25,
+            skills : ['검술','변신','월담'],
+
+            greet: function(time) {
+                console.log('greet')
+                return `${time} 안녕하세요? ${this.name}` 
+            }
+        }
+        console.log(person.greet("아침에"))
+
+        // person2 = new Object()
+        person2 = {}
+        person2.name = "홍길동"
+        person2.age = 25
+
+        person2.greet = function(time) {
+                console.log('greet')
+                return `${time} 안녕하세요? ${this.name}` 
+            }
+        console.log(person2.name, person2.age, person2.greet("저녁에"))
+    </script>
+</body>
+</html>

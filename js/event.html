@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>event handler</h1>
+    <br>
+
+    <button id="mybutton", onclick="showEvent('클릭 되었습니다')">첫번째 버튼</button>
+
+    <button id="mybutton2">두번째 버튼</button>
+    <button id="mybutton3">세번째 버튼</button>
+    <hr>
+    <div id="output" style="border: 1px solid;">추가 메세지</div>
+
+    <script>
+        const mybutton3 = document.getElementById("mybutton3")
+        mybutton3.addEventListener('click', () =>{
+            const outputDiv = document.getElementById("output")
+            outputDiv.innerHTML = '세번째 클릭'
+        })
+        
+        mybutton3.addEventListener('dbclick', ()=>{
+            const outputDiv = document.getElementById("output")
+            outputDiv.innerHTML = '세번째 더블 클릭'
+        })
+
+        const mybutton2 = document.getElementById("mybutton2")
+        mybutton2.onclick = function () {
+            const outputDiv = document.getElementById("output")
+            outputDiv.innerHTML = "두번째 버튼 클릭"
+        }
+
+
+        function showEvent(message) {
+            console.log(message)
+
+            const outputDiv = document.getElementById("output")
+            outputDiv.innerHTML = message
+        }
+    </script>
+</body>
+</html>

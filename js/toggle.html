@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM 이벤트 전파 & 스타일 토글 실습</title>
+  <style>
+    /* highlight 클래스: 노란 배경, 빨간 글씨, 볼드, 패딩 */
+    .highlight {
+      background-color: yellow;
+      color: red;
+      font-weight: bold;
+      padding: 5px;
+    }
+    /* 박스 스타일(이벤트 전파 섹션) */
+    #outer {
+      border: 2px solid #333;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    #log {
+      border: 1px dashed #666;
+      padding: 10px;
+      height: 100px;
+      overflow-y: auto;
+      font-family: monospace;
+      background: #fafafa;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM 이벤트 전파 & 스타일 토글 실습</h1>
+
+  <!-- 1. 이벤트 전파 실습 -->
+  <section>
+    <h2>1) 이벤트 전파 (버블링 vs 캡처링)</h2>
+    <div id="outer">
+      <strong>Outer Box</strong><br>
+      <button id="inner">Inner 버튼</button>
+    </div>
+    <div>
+      <p><strong>이벤트 로그:</strong></p>
+      <div id="log"></div>
+    </div>
+  </section>
+
+  <!-- 2. 스타일 토글 실습 -->
+  <section>
+    <h2>2) DOM 스타일 토글</h2>
+    <p id="text">이 문장을 강조해보세요!</p>
+    <button id="toggleBtn">강조 토글</button>
+  </section>
+
+  <script>
+    // --- 이벤트 전파 핸들러 등록 ---
+    const outer = document.getElementById('outer');
+    const inner = document.getElementById('inner');
+    const log = document.getElementById('log');
+
+    // 1) 캡처링 단계 핸들러 (부모 → 자식)
+    outer.addEventListener('click', () => {
+      appendLog('[캡처링] outer clicked');
+    }, true);
+
+    // 2) inner 요소 핸들러
+    inner.addEventListener('click', (e) => {
+      appendLog('inner clicked');
+      // e.stopPropagation();  // 버블링 방지 테스트 시 주석 해제
+    });
+
+    // 3) 버블링 단계 핸들러 (자식 → 부모)
+    outer.addEventListener('click', () => {
+      appendLog('[버블링] outer clicked');
+    });
+
+    // 로그를 쌓아주는 함수
+    function appendLog(message) {
+      const entry = document.createElement('div');
+      entry.textContent = message;
+      log.appendChild(entry);
+      // 스크롤을 맨 아래로
+      log.scrollTop = log.scrollHeight;
+    }
+
+    // --- 스타일 토글 핸들러 등록 ---
+    const text = document.getElementById('text');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+      text.classList.toggle('highlight');
+    });
+  </script>
+</body>
+</html>
